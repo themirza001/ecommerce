@@ -6,13 +6,15 @@ import com.mirza.ecommerce.dto.response.AllProductsApiResponse;
 import com.mirza.ecommerce.dto.response.ProductApiResponse;
 import com.mirza.ecommerce.dto.response.ProductResponseDTO;
 import com.mirza.ecommerce.gateway.ProductGateway;
+import com.mirza.ecommerce.gateway.interfaces.IProductGateway;
+import com.mirza.ecommerce.service.interfaces.IProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ProductService {
-    private final ProductGateway gateway;
+public class ProductService  implements IProductService {
+    private final IProductGateway gateway;
 
     public ProductService(ProductGateway gateway) {
         this.gateway = gateway;

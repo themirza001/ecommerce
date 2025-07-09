@@ -3,14 +3,16 @@ package com.mirza.ecommerce.service;
 import com.mirza.ecommerce.dto.ApiResponse;
 import com.mirza.ecommerce.dto.response.*;
 import com.mirza.ecommerce.gateway.UserGateway;
+import com.mirza.ecommerce.gateway.interfaces.IUserGateway;
+import com.mirza.ecommerce.service.interfaces.IUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService implements IUserService {
 
-    private final UserGateway gateway;
+    private final IUserGateway gateway;
 
     public UserService(UserGateway gateway) {
         this.gateway = gateway;

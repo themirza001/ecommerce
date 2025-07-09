@@ -4,6 +4,7 @@ import com.mirza.ecommerce.dto.response.AllProductsApiResponse;
 import com.mirza.ecommerce.dto.response.AllUsersApiResponse;
 import com.mirza.ecommerce.dto.response.UserApiResponse;
 import com.mirza.ecommerce.dto.response.UserResponseDTO;
+import com.mirza.ecommerce.gateway.interfaces.IUserGateway;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -12,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class UserGateway {
+public class UserGateway  implements IUserGateway {
 
     private final RestTemplate restTemplate;
     private final String userApi;
@@ -29,7 +30,6 @@ public class UserGateway {
     }
 
     public AllUsersApiResponse fetchAllUsers() {
-
         return restTemplate.getForObject(userApi, AllUsersApiResponse.class);
     }
 }

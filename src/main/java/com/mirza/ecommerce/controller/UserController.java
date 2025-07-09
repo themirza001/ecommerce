@@ -4,6 +4,7 @@ import com.mirza.ecommerce.dto.ApiResponse;
 import com.mirza.ecommerce.dto.response.UserApiResponse;
 import com.mirza.ecommerce.dto.response.UserResponseDTO;
 import com.mirza.ecommerce.service.UserService;
+import com.mirza.ecommerce.service.interfaces.IUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-    private final UserService service;
+    private final IUserService service;
 
     public UserController(UserService service) {
         this.service = service;
